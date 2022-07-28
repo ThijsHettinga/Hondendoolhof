@@ -42,18 +42,13 @@ public class HondenDoolhofLauncher {
             opgegevenAfstand = keyboard.nextInt();
             landkaartMetStrepen.setBeweging(new Beweging(opgegevenRichting, opgegevenAfstand));
             routeUitstippelaar.voegToe(landkaartMetStrepen.bewaarBewegingInCheckpoint());
-            aantalCheckpoints ++;
 
-            System.out.println(aantalCheckpoints);
-//            landkaartMetStrepen.haalBewegingUitCheckpoint(routeUitstippelaar.get());
             System.out.println("Huidige status: " + landkaartMetStrepen.getBeweging());
-            if (aantalCheckpoints > 1) {
+            if (aantalCheckpoints > 0) {
                 landkaartMetStrepen.haalBewegingUitCheckpoint(routeUitstippelaar.get(aantalCheckpoints - 1));
                 System.out.println("Vorige status: " + landkaartMetStrepen.getBeweging());
             }
-
-
-
+            aantalCheckpoints ++;
             System.out.println("Hallo hondje. Welke kant wil je op?\n" +
                     "1. links\n2. rechts\n3. vooruit\n4. achteruit\n9. stop ");
             richting = keyboard.nextInt();
